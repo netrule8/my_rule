@@ -5,6 +5,8 @@
 #!desc=BiliBili去广告
 
 [Rule]
+# emby规则
+DOMAIN-SUFFIX,emby.Nexitally.com,US
 # 去广告
 DOMAIN-SUFFIX,cm.bilibili.com,REJECT
 URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad,REJECT
