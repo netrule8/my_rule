@@ -23,7 +23,27 @@ DOMAIN-SUFFIX, dig.bdurl.net, DIRECT
 DOMAIN-SUFFIX, ibytedtos.com, REJECT
 DOMAIN-SUFFIX, ipstatp.com, REJECT
 
+# Youtube 去广告
+URL-REGEX,https?:\/\/.+.googlevideo.com\/ptracking\?pltype=adhost,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/api\/stats\/ads,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/get_midroll_,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/pagead\/,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/ptracking\?,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/_get_ads,REJECT
+URL-REGEX,https?:\/\/premiumyva.appspot.com\/vmclickstoadvertisersite,REJECT
+URL-REGEX,https?:\/\/s0.2mdn.net\/ads\/,REJECT
+URL-REGEX,https?:\/\/stats.tubemogul.com\/stats\/,REJECT
+URL-REGEX,https?:\/\/youtubei.googleapis.com\/.+ad_break,REJECT
+URL-REGEX,https?:\/\/youtubei.googleapis.com\/youtubei\/.+(ad|log),REJECT
+URL-REGEX,https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adformat,REJECT
+URL-REGEX,https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier),REJECT
+
 [URL Rewrite]
+# Youtube
+^https?+:\/\/.+?\.googlevideo\.com\/.+?(?>&oad|ctier) - reject-200
+^https?+:\/\/\w+?\.youtube\.com\/api\/.+?ad - reject-200
+^https?+:\/\/\w+?\.youtube\.com\/p(?>agead|tracking) - reject-200
+^https?+:\/\/youtubei\.googleapis\.com\/youtubei\/.+?(?>ad|log)_ - reject-200
 # 去除搜索中的大家都在搜
 ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
 # 去除动态中的话题
@@ -101,4 +121,4 @@ weixin110.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/
 
 
 [MITM]
-hostname = %APPEND% *.amemv.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
+hostname = %APPEND% *.googlevideo.com, *.youtube.com, youtubei.googleapis.com,*.amemv.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
