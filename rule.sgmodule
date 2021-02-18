@@ -83,4 +83,4 @@ weixin110.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/
 
 
 [MITM]
-hostname = %APPEND% app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com
+hostname = %APPEND% app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
