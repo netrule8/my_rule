@@ -5,6 +5,11 @@
 #!desc=BiliBili去广告
 
 [Rule]
+# 去除广告
+DOMAIN-SET,https://raw.githubusercontent.com/NobyDa/ND-AD/master/Surge/AD_Block.txt,REJECT
+DOMAIN-SET,https://raw.githubusercontent.com/NobyDa/ND-AD/master/Surge/AD_Block_Add.txt,REJECT
+RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list,REJECT
+
 # SMZDM
 URL-REGEX,^https?:\/\/(app-)?api\.smzdm\.com\/(v\d\/)?util\/(loading|banner),REJECT
 # emby规则
