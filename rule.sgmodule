@@ -32,6 +32,10 @@ DOMAIN-SUFFIX, ipstatp.com, REJECT
 
 
 [URL Rewrite]
+# 去除Spotify非会员插播广告
+^https?://spclient.wg.spotify.com/ad-logic/* - reject
+^https?://spclient.wg.spotify.com/ads/* - reject
+^https?://spclient.wg.spotify.com/.+ad_slot - reject
 # Youtube
 ^https?+:\/\/.+?\.googlevideo\.com\/.+?(?>&oad|ctier) - reject-200
 ^https?+:\/\/\w+?\.youtube\.com\/api\/.+?ad - reject-200
@@ -64,8 +68,8 @@ DOMAIN-SUFFIX, ipstatp.com, REJECT
 ^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
 
 [Script]
-# > 微信读书VIP
-#weread.js = requires-body=1,script-path=https://raw.githubusercontent.com/netrule8/my_rule/main/weread.js,type=http-response,pattern=^https?://i\.weread\.qq\.com/pay/memberCard
+# PDFExpert7
+PDFExpert.js = requires-body=1,script-path=https://raw.githubusercontent.com/guajie/Surge/master/Scripts/PDFExpert7.js,type=http-response,pattern=https:\/\/license\.pdfexpert\.com\/api\/1.0\/pdfexpert6\/subscription\/(check|refresh)
 # SMZDM
 SMZDM.js = requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/scomper/Surge/master/Scripts/SMZDM.js,pattern=^https?:\/\/(s|h(aojia|omepage)|(articl|baik)e)-api\.smzdm\.com\/(home|sou),type=http-response
 
@@ -153,4 +157,4 @@ weixin110.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?:\/
 
 
 [MITM]
-hostname = %APPEND% weather-data.apple.com,api.weather.com,*api.smzdm.com,api.vuevideo.net,biz.caiyunapp.com,api.gotokeep.com,ap*.intsig.net,account.wps.*,api.termius.com,vsco.co,p.du.163.com,*.kuwo.cn,vip1.kuwo.cn,aweme*.snssdk.com,*.amemv.com,snailsleep.net,bea.sportq.com,*.googlevideo.com, *.youtube.com, youtubei.googleapis.com,*.amemv.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
+hostname = %APPEND% license.pdfexpert.com,spclient.wg.spotify.com,weather-data.apple.com,api.weather.com,*api.smzdm.com,api.vuevideo.net,biz.caiyunapp.com,api.gotokeep.com,ap*.intsig.net,account.wps.*,api.termius.com,vsco.co,p.du.163.com,*.kuwo.cn,vip1.kuwo.cn,aweme*.snssdk.com,*.amemv.com,snailsleep.net,bea.sportq.com,*.googlevideo.com, *.youtube.com, youtubei.googleapis.com,*.amemv.com,app.bilibili.com,api.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,trade-acs.m.taobao.com,api.m.jd.com,mp.weixin.qq.com, ios.prod.ftl.netflix.com, weixin110.qq.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
