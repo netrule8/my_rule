@@ -1,5 +1,5 @@
 [rewrite_local]
-http?:\/\/app\.qikan\.cn\/artical\/detail url script-response-body https://github.com/netrule8/my_rule/raw/main/j.js
+http\?:\/\/app\.qikan\.cn\/artical\/detail url script-response-body https://github.com/netrule8/my_rule/raw/main/j.js
 
 
 [mitm] 
